@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://xml.user" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"    
+           elementFormDefault="qualified"
+           xmlns:myco="http://xml.user">
+
+  <xs:element name="User" type="myco:User"/>
+
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+	  <xs:element name="balance" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
