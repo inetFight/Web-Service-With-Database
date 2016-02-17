@@ -69,7 +69,6 @@ public class UserService extends DAO {
 	public void addBalance(String username, int balance) {
 
 		try {
-			begin();
 			close();
 			User user = retrieveUser(username);
 			begin();
