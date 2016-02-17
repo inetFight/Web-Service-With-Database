@@ -51,6 +51,16 @@ public class UserService extends DAO {
 			throw new Exception("Could not get users " + e);
 		}
 	}
+	public void deleteUser( User user ) throws Exception {
+        try {
+            begin();
+            getSession().delete(user);
+            commit();
+        } catch (HibernateException e) {
+            rollback();
+            throw new Exception("Could not delete user " + user.getName(), e);
+        }
+    }
 
 	public boolean checkUser(String username) {
 

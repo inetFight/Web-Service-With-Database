@@ -1,6 +1,8 @@
 package com.litvinov.bank.accounting.service.resourse;
 
 import java.util.List;
+
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -43,5 +45,15 @@ public class Resourse {
 	public List<User> getUsers() throws Exception {
 		return userService.getAllUsers();
 	}
+	
+	@DELETE
+	@Path("/delete/{username}")
+	@Produces(MediaType.APPLICATION_XML)
+	public User deleteUser(@PathParam("username") String username) throws Exception{
+		User user = userService.retrieveUser(username);
+		userService.deleteUser(user);
+		return user;
+	}
+	
 
 }
