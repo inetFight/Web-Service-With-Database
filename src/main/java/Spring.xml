@@ -12,6 +12,6 @@
 	<bean id="UserInterface" class="com.litvinov.bank.accounting.service.models.UserService" />
 
 	<!-- Aspect -->
-	<bean id="logAspect" class="com.litvinov.bank.accounting.service.models.LoggingAspect" />
+	<bean id="logAspect" class="com.litvinov.bank.accounting.service.logging.LoggingAspect" />
 
 </beans>
